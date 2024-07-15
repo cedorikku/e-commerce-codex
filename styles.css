@@ -1,0 +1,143 @@
+:root {
+    --text: #000;
+    --text-secondary: #fff;
+    --background: #000;
+    --secondary: #bbb;
+    --accent: #b200ff;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--text);
+}
+
+small {
+    font-size: 0.8rem;
+}
+
+.navbar {
+    background: var(--text-secondary);
+}
+
+.navbar a {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.navbar a,
+.footer a {
+    font-family: 'Dela Gothic One', monospace;
+    font-size: 1.45rem;
+}
+
+.main-content .container {
+    overflow: hidden;
+}
+
+.main-content h5 {
+    user-select: none;
+}
+
+.menu-tab h5 {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    color: var(--text-secondary);
+}
+
+.main-content .nav {
+    background-color: var(--text-secondary);
+}
+
+.main-content .nav-link {
+    color: var(--text);
+    text-align: start;
+}
+
+.main-content .nav-link:hover {
+    background-color: var(--secondary) !important;
+    color: var(--text);
+}
+
+.main-content .nav-link.active {
+    background-color: var(--text) !important;
+    color: var(--text-secondary);
+}
+
+.main-content .nav-link.disabled {
+    color: #999;
+}
+
+.main-content .card {
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-out;
+}
+
+.main-content .card:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 25px 5px rgb(90,90,90, 0.33);
+}
+
+.main-content .card-img-top {
+    transition: all 0.3s ease-out;
+}
+
+.main-content .card:hover .card-img-top {
+    position: relative;
+    transform: scale(1.05);
+}
+
+.main-content .card img {
+    object-fit: cover;
+    height: 200px;
+}
+
+.main-content .card-footer {
+    background-color: var(--background) !important;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.main-content .card-footer h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.main-content .card-footer p {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.main-content .card-footer p span {
+    font-size: 1rem;
+}
+
+.footer a i {
+    color: #eee;
+    width: 35px;
+    font-size: x-large;
+    padding-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.footer a i:hover {
+    color: lightgray;
+}
+
+.footer button {
+    background: #25528b;
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.footer p {
+    font-size: smaller;
+    padding: 0;
+    margin: 0;
+    color: darkgray;
+}
