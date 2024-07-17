@@ -157,3 +157,7 @@ i:hover {
     margin: 0;
     color: darkgray;
 }
+
+.btn-outline-light {
+    width: 100%;
+}
