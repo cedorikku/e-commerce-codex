@@ -1,0 +1,136 @@
+[
+    {
+        "name": "Microwave Oven",
+        "price": 2500,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "name": "Dishwashing Liquid",
+        "price": 120,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "name": "Cutting Board",
+        "price": 300,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "name": "Blender",
+        "price": 1200,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "name": "Non Stick Frying Pan",
+        "price": 540,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "name": "Shower Curtain",
+        "price": 500,
+        "stock": 100,
+        "category": "Bathroom"
+    },
+    {
+        "name": "Handsoap",
+        "price": 50,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "name": "Bath Towels",
+        "price": 250,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "name": "Toothbrush Holder",
+        "price": 350,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "name": "Bathroom Cleaner",
+        "price": 150,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "name": "Vacuum Cleaner",
+        "price": 4500,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "name": "Air Freshener",
+        "price": 150,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "name": "Humidifier",
+        "price": 1200,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "name": "Carpet",
+        "price": 1000,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "name": "Sofa Pillows",
+        "price": 250,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    
+    {
+        "name": "Bed Sheets",
+        "price": 380,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "name": "Alarm Clock",
+        "price": 200,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "name": "Closet Organizer",
+        "price": 300,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "name": "Table Lamp",
+        "price": 500,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "name": "Curtains",
+        "price": 300,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+]
