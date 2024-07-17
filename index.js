@@ -7,7 +7,9 @@ const inventoryDB = "mongodb://localhost:27017/inventory";
 const mongoose = require('mongoose');
 
 mongoose.connect(inventoryDB);
+
 mongoose.connection.on('connected', () => console.log(`App connected to a database: ${inventoryDB}`));
+mongoose.connection.on('error', (error) => console.log(error.message));
 mongoose.connection.on('disconnected', () => console.log(`App disconnected from the database: ${inventoryDB}`));
 
 app.use(express.static('public'));
