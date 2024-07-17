@@ -1,0 +1,23 @@
+{
+  "name": "e-commerce-codex",
+  "version": "1.0.0",
+  "description": "very simple e-commerce web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedorikku/e-commerce-codex.git"
+  },
+  "author": "CL, Kenneth, Cedric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cedorikku/e-commerce-codex/issues"
+  },
+  "homepage": "https://github.com/cedorikku/e-commerce-codex#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  }
+}
