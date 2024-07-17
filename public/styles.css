@@ -16,14 +16,14 @@ small {
 }
 
 .navbar {
-    background: var(--text-secondary);
+    background: var(--background);
 }
 
 .navbar a {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 400;
-    color: var(--text);
+    color: var(--text-secondary);
 }
 
 .navbar a,
