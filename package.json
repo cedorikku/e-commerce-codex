@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cedorikku/e-commerce-codex#readme",
   "dependencies": {
+    "bootstrap-icons": "^1.11.3",
     "express": "^4.19.2",
     "mongoose": "^8.5.1"
   },
