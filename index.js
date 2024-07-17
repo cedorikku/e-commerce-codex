@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.port || 8080;
-const mongo_url = "mongodb://localhost:27017/household-items-store";
+const mongo_url = "mongodb+srv://colAdmin:HudEMjjYEHQut6zX@db-cluster.q2r17kk.mongodb.net/?retryWrites=true&w=majority&appName=db-cluster;";
 
 const mongoose = require('mongoose');
 
-mongoose.connect(mongo_url).then(() => {
+mongoose.connect(mongo_url)
+.then(() => {
   mongoose.connection.on('connected', () => console.log(`App connected to a database: ${storeDB}`));
   mongoose.connection.on('disconnected', () => console.log(`App disconnected from the database: ${storeDB}`));
 
