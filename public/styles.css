@@ -23,6 +23,12 @@ small {
 i {
     color: white;
     cursor: pointer;
+    font-size: large;
+    transition: all 0.2s ease;
+}
+
+i:hover {
+    color: lightgray;
 }
 
 .navbar {
