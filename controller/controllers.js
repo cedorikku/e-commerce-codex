@@ -1,6 +1,12 @@
 const { Inventory } = require('../models/inventory');
 const { tempUserCart } = require('../models/tempCart');
 
+const renderProducts = async (req, res) => {
+    const products = await Inventory.find();
+    console.log(products);
+    res.render('index', { item: { products } });
+};
+
 const addToCart = async (req, res) => {
     const item = await Inventory.findOne({ name: req.body.name })
     const added = await Inventory.findByIdAndUpdate(item._id, { $inc: { stock: -1 } })
@@ -20,4 +26,4 @@ const addToCart = async (req, res) => {
     };
 };
 
-module.exports = { addToCart };
+module.exports = { renderProducts, addToCart};
