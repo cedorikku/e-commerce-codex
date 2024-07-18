@@ -21,6 +21,7 @@
         </div>
     </nav>
 
+    <%= items[0].picture %>
     <section class="main-content mt-5">
         <div class="container">
             <div class="row">
@@ -55,7 +56,7 @@
                             <h5 class="text-center">Kitchen</h5>
                             <div class="row">
                                 <%  
-                                    const kitchenItems = products.items.filter(item => item.category === "Kitchen");
+                                    const kitchenItems = items.filter(item => item.category === "Kitchen");
                                     kitchenItems.forEach(product => { 
                                 %>
 
@@ -80,7 +81,7 @@
                             <h5 class="text-center">Bathroom</h5>
                             <div class="row">
                                 <%  
-                                    const bathroomItems = products.items.filter(item => item.category === "Bathroom");
+                                    const bathroomItems = items.filter(item => item.category === "Bathroom");
                                     bathroomItems.forEach(product => { 
                                 %>
 
@@ -105,7 +106,7 @@
                             <h5 class="text-center">Living Room</h5>
                             <div class="row">
                                 <%  
-                                    const livingRoomItems = products.items.filter(item => item.category === "Living Room");
+                                    const livingRoomItems = items.filter(item => item.category === "Living Room");
                                     livingRoomItems.forEach(product => { 
                                 %>
 
@@ -130,7 +131,7 @@
                             <h5 class="text-center">Bedroom</h5>
                             <div class="row">
                                 <%  
-                                    const bedroomItems = products.items.filter(item => item.category === "Bedroom");
+                                    const bedroomItems = items.filter(item => item.category === "Bedroom");
                                     bedroomItems.forEach(product => { 
                                 %>
 

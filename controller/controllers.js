@@ -4,7 +4,7 @@ const { tempUserCart } = require('../models/tempCart');
 const renderProducts = async (req, res) => {
     const items = await Inventory.find();
     console.log(items);
-    res.render('index', { products: { items } });
+    res.render('index', { items });
 };
 
 const addToCart = async (req, res) => {
