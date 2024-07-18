@@ -1,19 +1,20 @@
 const express = require('express');
+const ejs = require('ejs');
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 8080;
 
 app.use(express.json(), express.static('public'));
-require('./config/conf');
 
-app.get('/', (res, req) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'), (error) => {
-    if (error) res.status(500).send("Error serving the file");
-  });
-});
+require('./config/conf');
 
 const controller = require('./controller/controllers')
 app.put('/api/cart', controller.addToCart)
+
+app.set('view engine', 'ejs');
+app.get('/', (req, res) => {
+  controller.renderProducts(req, res);
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
