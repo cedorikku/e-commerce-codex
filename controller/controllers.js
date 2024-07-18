@@ -1,4 +1,4 @@
-const { Inventory } = require('../models/model');
+const { Inventory } = require('../models/inventory');
 
 const addToCart = async (req, res) => {
     const item = await Inventory.findOne({ name: req.body.name }); 
