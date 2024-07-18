@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const inventorySchema = new mongoose.Schema({
-    name: String,
-    price: Number, 
-    stock: Number,
-    category: String,
-  });
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    stock: { type: Number, required: true },
+    category: { type: String, required: true }
+});
 
-const invSchema = mongoose.model("inventories", inventorySchema);
-module.exports = { invSchema };
+const Inventory = mongoose.model('Inventory', inventorySchema);
+module.exports = { Inventory };
