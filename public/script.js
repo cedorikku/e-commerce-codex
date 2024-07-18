@@ -6,11 +6,11 @@ function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
 
   fetch('/api/cart', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ title: productName }),
+    body: JSON.stringify({ name: productName }),
   })
   .then(response => response.json())
   .then(data => console.log(data))

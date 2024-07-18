@@ -3,7 +3,7 @@ const app = express();
 require('dotenv').config();
 const port = process.env.port || process.env.DB_PORT;
 
-app.use(express.static('public'));
+app.use(express.json(), express.static('public'));
 require('./config/conf');
 
 app.get('/', (res, req) => {
@@ -12,6 +12,9 @@ app.get('/', (res, req) => {
   });
 });
 
+const controller = require('./controller/controllers')
+app.put('/api/cart', controller.addToCart)
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-})
+});
