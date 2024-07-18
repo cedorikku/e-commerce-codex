@@ -49,255 +49,105 @@
 
                 <div class="col-lg-9 p-3 menu-tab">
                     <div class="tab-content" id="v-pills-tabContent">
+
                         <div class="tab-pane fade show active" id="v-pills-kitchen" role="tabpanel"
                             aria-labelledby="v-pills-home-tab">
                             <h5 class="text-center">Kitchen</h5>
                             <div class="row">
+                                <%  
+                                    const kitchenItems = products.items.filter(item => item.category === "Kitchen");
+                                    kitchenItems.forEach(product => { 
+                                %>
+
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="assets/images/MicrowaveOven.png" class="card-img-top"
-                                            alt="MicrowaveOven">
+                                        <img src="" class="card-img-top" alt="<%= product.name %>" />
                                         <div class="card-footer bg-primary text-light">
-                                            <h3>Microwave Oven</h3>
-                                            <p>₱<span>690.00</span></p>
+                                            <% if(product.category === "Kitchen") { %>
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
                                             <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-
+                                            <% } %>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/DishwashingLiquid.png" class="card-img-top"
-                                            alt="DishwashingLiquid">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Dishwashing Liquid</h3>
-                                            <p>₱<span>600.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/CuttingBoard.png" class="card-img-top"
-                                            alt="CuttingBoard">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Cutting Board</h3>
-                                            <p>₱<span>350.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/Blender.png" class="card-img-top" alt="blender">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Blender</h3>
-                                            <p>₱<span>420.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/Pan.png" class="card-img-top" alt="Pan">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Non Stick Frying Pan</h3>
-                                            <p>₱<span>380.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                <% }) %>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-bathroom" role="tabpanel">
                             <h5 class="text-center">Bathroom</h5>
                             <div class="row">
+                                <%  
+                                    const bathroomItems = products.items.filter(item => item.category === "Bathroom");
+                                    bathroomItems.forEach(product => { 
+                                %>
+
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="assets/images/ShowerCurtain.png" class="card-img-top"
-                                            alt="ShowerCurtain">
+                                        <img src="" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
-                                            <h3>Shower Curtain</h3>
-                                            <p>₱<span>500.00</span></p>
+                                            <% if(product.category === "Bathroom") { %>
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
                                             <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
+                                            <% } %>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/HandSoap.png" class="card-img-top" alt="Handsoap">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Handsoap</h3>
-                                            <p>₱<span>580.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/BathTowels.png" class="card-img-top" alt="BathTowels">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Bath Towels</h3>
-                                            <p>₱<span>600.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/ToothBrushHolder.png" class="card-img-top"
-                                            alt="ToothbrushHolder">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Toothbrush Holder</h3>
-                                            <p>₱<span>690.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/MrMuscle.png" class="card-img-top" alt="MrMuscle">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Bathroom Cleaner</h3>
-                                            <p>₱<span>600.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <% }) %>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-livingroom" role="tabpanel">
                             <h5 class="text-center">Living Room</h5>
                             <div class="row">
+                                <%  
+                                    const livingRoomItems = products.items.filter(item => item.category === "Living Room");
+                                    livingRoomItems.forEach(product => { 
+                                %>
+
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="assets/images/vacuum1.jpg" class="card-img-top" alt="vacuum cleaner">
+                                        <img src="" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
-                                            <h3>Vacuum Cleaner</h3>
-                                            <p>₱<span>380.00</span></p>
+                                            <% if(product.category === "Living Room") { %>
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
                                             <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
+                                            <% } %>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/air-freshener.png" class="card-img-top"
-                                            alt="air freshener">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Air Freshener</h3>
-                                            <p>₱<span>240.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/humidifier.png" class="card-img-top" alt="humidifier">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Humidifier</h3>
-                                            <p>₱<span>220.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/carpet.png" class="card-img-top" alt="carpet">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Carpet</h3>
-                                            <p>₱<span>420.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/pillow.png" class="card-img-top" alt="sofa pillow">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Sofa Pillows</h3>
-                                            <p>₱<span>420.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                <% }) %>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-bedroom" role="tabpanel">
                             <h5 class="text-center">Bedroom</h5>
                             <div class="row">
+                                <%  
+                                    const bedroomItems = products.items.filter(item => item.category === "Bedroom");
+                                    bedroomItems.forEach(product => { 
+                                %>
+
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="assets/images/bedsheets.png" class="card-img-top" alt="bed sheets">
+                                        <img src="" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
-                                            <h3>Bed Sheets</h3>
-                                            <p>₱<span>380.00</span></p>
+                                            <% if(product.category === "Bedroom") { %>
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
                                             <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
+                                            <% } %>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/alarm-clock.png" class="card-img-top" alt="alarm clock">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Alarm Clock</h3>
-                                            <p>₱<span>320.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/closet.png" class="card-img-top" alt="closet organizer">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Closet Organizer</h3>
-                                            <p>₱<span>300.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/lamp.png" class="card-img-top" alt="table lamp">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Table Lamp</h3>
-                                            <p>₱<span>350.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="assets/images/curtain.png" class="card-img-top" alt="curtains">
-                                        <div class="card-footer bg-primary text-light">
-                                            <h3>Curtains</h3>
-                                            <p>₱<span>350.00</span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                <% }) %>
                             </div>
                         </div>
                     </div>
