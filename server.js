@@ -16,6 +16,8 @@ app.get('/', (req, res) => {
   controller.renderProducts(req, res);
 });
 
+app.get('/api/getCart', controller.getCart)
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
