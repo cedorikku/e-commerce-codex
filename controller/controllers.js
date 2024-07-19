@@ -41,7 +41,6 @@ const getCart = async (req, res) => {
 };
 
 const updateCart = async (req, res) => {
-    console.log(req.body.prodName)
     const cartContents = await tempUserCart.findOne({name: req.body.prodName})
     await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {qty: req.body.quantity})
     await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {subtotal: cartContents.qty * cartContents.price})

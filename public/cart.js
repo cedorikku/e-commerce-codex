@@ -61,6 +61,7 @@ function updateInput(inputNode, newValue) {
   })
     .then(response => response.json())
     .catch((error) => console.log('Error:', error))
+    location.reload();
 }
 
 function changeAmount(e) {
