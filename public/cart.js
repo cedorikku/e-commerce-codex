@@ -48,15 +48,16 @@ function updateInput(inputNode, newValue) {
   if (newValue < 1) {
     return;
   }
-  const name = inputNode.closest('td').previousElementSibling.textContent;
-
+  const name = inputNode.closest('td').previousElementSibling.innerText;
   inputNode.value = newValue;
   fetch('/api/updateCart', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ prodName: name, quantity: newValue }),
+    body: JSON.stringify({ 
+      prodName: name.replace(/\s+/g, ' ').trim(), 
+      quantity: newValue }),
   })
     .then(response => response.json())
     .catch((error) => console.log('Error:', error))
