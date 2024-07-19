@@ -208,3 +208,15 @@ i:hover {
 .toast.show {
     opacity: 1;
 }
+
+/* Remove number arrows in Chromium */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove number arrows in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
