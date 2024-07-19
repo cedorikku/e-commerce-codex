@@ -10,8 +10,9 @@ const renderProducts = async (req, res) => {
 };
 
 const renderUserCart = async (req, res) => {
+    const inventory = await Inventory.find();
     const cart = await tempUserCart.find();
-    res.render('cart', { cart });
+    res.render('cart', { cart, inventory});
 }
 
 const addToCart = async (req, res) => {
