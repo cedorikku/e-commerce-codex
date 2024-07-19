@@ -1,3 +1,20 @@
+// document.querySelector('#goBack').addEventListener('click', () => {
+//   location.href = '/'
+// })
+
+// document.querySelector('#checkOut').addEventListener('click', () => {
+//   location.href = '/checkout'
+// });
+
+document.querySelector('#homeCodex').addEventListener('click', () => {
+  location.href = '/';
+})
+
+document.querySelector('#cartIcon').addEventListener('click', () => {
+  location.href = '/cart';
+});
+
+
 const addToCartButton = document.querySelectorAll('.card-footer > button');
 
 addToCartButton.forEach(button => button.addEventListener('click', addToCart));
@@ -59,8 +76,7 @@ function addToCartClicked() {
   toast.show();
 
 }
-
-const cartBtn = document.querySelector('#addToCart').addEventListener(() => {
+document.querySelector('#addToCart').addEventListener(() => {
   fetch('/api/getCart', {
     method: 'GET', // Use GET method for fetching data
     headers: {
@@ -75,3 +91,4 @@ const cartBtn = document.querySelector('#addToCart').addEventListener(() => {
     console.error('Error fetching cart items:', error);
   });
 });
+
