@@ -62,10 +62,16 @@ function addToCartClicked(productName) {
 
 const cartBtn = document.querySelector('#addToCart').addEventListener(() => {
   fetch('/api/getCart', {
-    method: 'PUT',
+    method: 'GET', // Use GET method for fetching data
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({items}),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Cart items:', data);
+  })
+  .catch(error => {
+    console.error('Error fetching cart items:', error);
   });
 });

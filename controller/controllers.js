@@ -1,9 +1,11 @@
+const express = require('express')
+const app = express()
 const { Inventory } = require('../models/inventory');
 const { tempUserCart } = require('../models/tempCart');
+app.use(express.json())
 
 const renderProducts = async (req, res) => {
     const items = await Inventory.find();
-    console.log(items);
     res.render('index', { items });
 };
 
@@ -26,4 +28,10 @@ const addToCart = async (req, res) => {
     };
 };
 
-module.exports = { renderProducts, addToCart};
+const getCart = async (req, res) => {
+    const cartItems = await tempUserCart.find();
+    console.log(cartItems)
+    res.render('cart', { cartItems });
+};
+
+module.exports = { renderProducts, addToCart, getCart};
