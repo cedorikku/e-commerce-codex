@@ -1,3 +1,7 @@
+document.querySelector('#homeCodex').addEventListener('click', () => {
+  location.href = '/';
+})
+
 document.querySelector('#cartIcon').addEventListener('click', () => {
   location.href = '/cart';
 });
