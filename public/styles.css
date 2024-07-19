@@ -149,6 +149,10 @@ i:hover {
     cursor: context-menu;
 }
 
+.main-content .card-disabled:hover .card-img-top {
+    transform: none;
+}
+
 .main-content  .btn-outline-light {
     margin-top: 16px;
     width: 100%;
