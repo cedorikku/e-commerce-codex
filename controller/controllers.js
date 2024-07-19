@@ -25,6 +25,7 @@ const addToCart = async (req, res) => {
         const newItem = new tempUserCart({
             name: item.name,
             price: item.price,
+            stock: item.stock,
             qty: 1,
             category: item.category,
             subtotal: item.price * 1
