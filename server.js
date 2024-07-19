@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
   controller.renderProducts(req, res);
 });
 
+app.get('/cart', (req, res) => {
+  controller.renderUserCart(req, res);
+});
+
 app.get('/api/getCart', (req, res) =>  {
   controller.getCart(req,res)})
 

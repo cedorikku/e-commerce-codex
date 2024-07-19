@@ -9,6 +9,11 @@ const renderProducts = async (req, res) => {
     res.render('index', { items });
 };
 
+const renderUserCart = async (req, res) => {
+    const cart = await tempUserCart.find();
+    res.render('cart', { cart });
+}
+
 const addToCart = async (req, res) => {
     const item = await Inventory.findOne({ name: req.body.name })
     // const added = await Inventory.findByIdAndUpdate(item._id, { $inc: { stock: -1 } })
@@ -34,4 +39,4 @@ const getCart = async (req, res) => {
     res.json(cartItems);
 };
 
-module.exports = { renderProducts, addToCart, getCart};
+module.exports = { renderProducts, renderUserCart, addToCart, getCart};
