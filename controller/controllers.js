@@ -43,7 +43,7 @@ const getCart = async (req, res) => {
 const updateCart = async (req, res) => {
     const cartContents = await tempUserCart.findOne({name: req.body.name})
     await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {qty: req.body.quantity})
-    await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {subtotal: cartContents.qty})
+    await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {subtotal: cartContents.qty * cartContents.price})
 }
 
-module.exports = { renderProducts, renderUserCart, addToCart, getCart};
+module.exports = { renderProducts, renderUserCart, addToCart, getCart, updateCart};
