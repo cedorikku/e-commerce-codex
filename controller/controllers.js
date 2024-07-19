@@ -11,7 +11,7 @@ const renderProducts = async (req, res) => {
 
 const addToCart = async (req, res) => {
     const item = await Inventory.findOne({ name: req.body.name })
-    const added = await Inventory.findByIdAndUpdate(item._id, { $inc: { stock: -1 } })
+    // const added = await Inventory.findByIdAndUpdate(item._id, { $inc: { stock: -1 } })
     let tempItem = await tempUserCart.findOne({name: item.name})
     if (tempItem) {
         await tempUserCart.findOneAndUpdate({_id: tempItem._id}, { $inc: { qty: 1 }});
