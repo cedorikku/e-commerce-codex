@@ -53,8 +53,47 @@
                 <div class="col-lg-9 p-3 menu-tab">
                     <div class="tab-content" id="v-pills-tabContent">
 
-                        <div class="tab-pane fade show active" id="v-pills-kitchen" role="tabpanel"
+                        <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel"
                             aria-labelledby="v-pills-home-tab">
+                            <h5 class="text-center">Kitchen</h5>
+                            <div class="row">
+                                <%  
+                                    const allItems = items.filter(item => item.stock > 0);
+                                    allItems.forEach(product => { 
+                                %>
+
+                                <div class="col-lg-4 col-6">
+                                    <div class="card mb-3">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>" />
+                                        <div class="card-footer bg-primary text-light">
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
+                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                <% 
+                                    const noStock= items.filter(item => item.stock === 0);
+                                    noStock.forEach(product => {
+                                %>
+                                <div class="col-lg-4 col-6">
+                                    <div class="card mb-3">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
+                                        <div class="card-footer bg-primary text-light">
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
+                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-kitchen" role="tabpanel">
                             <h5 class="text-center">Kitchen</h5>
                             <div class="row">
                                 <%  
