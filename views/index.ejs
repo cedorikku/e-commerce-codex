@@ -60,7 +60,7 @@
 
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="" class="card-img-top" alt="<%= product.name %>" />
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>" />
                                         <div class="card-footer bg-primary text-light">
                                             <% if(product.category === "Kitchen") { %>
                                             <h3><%= product.name %></h3>
@@ -132,20 +132,31 @@
                                     const bedroomItems = items.filter(item => item.category === "Bedroom");
                                     bedroomItems.forEach(product => { 
                                 %>
-
+                                <% if(product.stock >= 1) { %>
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
                                         <img src="" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
-                                            <% if(product.category === "Bedroom") { %>
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
                                             <p>Stock: <span><%= product.stock %></span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-                                            <% } %>
+                                            <button type="button" class="btn btn-outline-light">Add To Cart</button>
                                         </div>
                                     </div>
                                 </div>
+                                <% } %>
+                                <% if(product.stock === 0){ %>
+                                    <div class="col-lg-4 col-6">
+                                        <div class="card mb-3">
+                                            <img src="" class="card-img-top" alt="<%= product.name %>">
+                                            <div class="card-footer bg-primary text-light">
+                                                <h3><%= product.name %></h3>
+                                                <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                                <p><span>Out of stock!</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
                                 <% }) %>
                             </div>
                         </div>
