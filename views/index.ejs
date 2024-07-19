@@ -79,19 +79,33 @@
                             <h5 class="text-center">Bathroom</h5>
                             <div class="row">
                                 <%  
-                                    const bathroomItems = items.filter(item => item.category === "Bathroom");
+                                    const bathroomItems = items.filter(item => item.category === "Bathroom" && item.stock > 0);
                                     bathroomItems.forEach(product => { 
                                 %>
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
                                         <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
-                                            <% if(product.category === "Bathroom") { %>
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
                                             <p>Stock: <span><%= product.stock %></span></p>
                                             <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
-                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                <% 
+                                    const zeroBathroomItems = items.filter(item => item.category === "Bathroom" && item.stock === 0);
+                                    zeroBathroomItems.forEach(product => {
+                                %>
+                                <div class="col-lg-4 col-6">
+                                    <div class="card mb-3">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
+                                        <div class="card-footer bg-primary text-light">
+                                            <h3><%= product.name %></h3>
+                                            <p>₱<span><%= product.price.toFixed(2)%></span></p>
+                                            <p>Stock: <span><%= product.stock %></span></p>
+                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked('Microwave Oven')">Add To Cart</button>
                                         </div>
                                     </div>
                                 </div>
