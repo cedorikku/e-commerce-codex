@@ -17,7 +17,7 @@ function addToCart(e) {
   .catch((error) => console.error('Error:', error));
 }
 
-function addToCartClicked(productName) {
+function addToCartClicked() {
   if (!document.getElementById('toastContainer')) {
       var toastContainer = document.createElement('div');
       toastContainer.id = 'toastContainer';
