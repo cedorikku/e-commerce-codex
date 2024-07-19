@@ -23,6 +23,12 @@ updateButtons.forEach(button => {
 
 quantity.forEach(input => {
   input.addEventListener('change', (e) => (e));
+  // Prevent non-numeric inputs
+  input.addEventListener('keypress', (e) => {
+      if (!/^\d*$/.test(e.key)) {
+          e.preventDefault(); 
+      }
+  });
 });
 
 function decrement(e) {
