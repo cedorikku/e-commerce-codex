@@ -7,6 +7,7 @@
     --background: #000;
     --secondary: #bbb;
     --accent: #b200ff;
+    --no-stock: #800000;
 }
 @keyframes slideIn {
     from {
@@ -141,6 +142,11 @@ i:hover {
 .main-content .card-footer p span {
     font-size: 1rem;
     font-style: italic;
+}
+
+.main-content .card-disabled:hover {
+    box-shadow: none !important;
+    cursor: context-menu;
 }
 
 .main-content  .btn-outline-light {

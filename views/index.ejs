@@ -79,13 +79,12 @@
                                     noStock.forEach(product => {
                                 %>
                                 <div class="col-lg-4 col-6">
-                                    <div class="card mb-3">
-                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
+                                    <div class="card mb-3 card-disabled">
+                                        <img src="<%= product.picture %>" class="card-img-top-disabled" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
-                                            <p>Stock: <span><%= product.stock %></span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                            <p><span>Out of stock!</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,8 +122,7 @@
                                         <div class="card-footer bg-primary text-light">
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
-                                            <p>Stock: <span><%= product.stock %></span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                            <p><span>Out of stock!</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -161,8 +159,7 @@
                                         <div class="card-footer bg-primary text-light">
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
-                                            <p>Stock: <span><%= product.stock %></span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                            <p><span>Out of stock!</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -198,8 +195,7 @@
                                         <div class="card-footer bg-primary text-light">
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
-                                            <p>Stock: <span><%= product.stock %></span></p>
-                                            <button type="button" class="btn btn-outline-light" onclick="addToCartClicked()">Add To Cart</button>
+                                            <p><span>Out of stock!</span></p>
                                         </div>
                                     </div>
                                 </div>
