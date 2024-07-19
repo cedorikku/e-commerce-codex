@@ -1,11 +1,3 @@
-// document.querySelector('#goBack').addEventListener('click', () => {
-//   location.href = '/'
-// })
-
-// document.querySelector('#checkOut').addEventListener('click', () => {
-//   location.href = '/checkout'
-// });
-
 document.querySelector('#homeCodex').addEventListener('click', () => {
   location.href = '/';
 })
