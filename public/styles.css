@@ -133,11 +133,19 @@ i:hover {
 }
 
 .main-content .card-footer p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin: 3px;
+    font-style: italic;
     font-weight: 500;
 }
 .main-content .card-footer p span {
     font-size: 1rem;
+    font-style: italic;
+}
+
+.main-content  .btn-outline-light {
+    margin-top: 16px;
+    width: 100%;
 }
 
 .footer a i {
@@ -166,9 +174,6 @@ i:hover {
     color: darkgray;
 }
 
-.btn-outline-light {
-    width: 100%;
-}
 .toast {
     border-radius: 10px;
     animation: slideIn 1s ease-out forwards; 
