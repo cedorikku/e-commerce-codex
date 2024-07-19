@@ -1,3 +1,11 @@
+// document.querySelector('#goBack').addEventListener('click', () => {
+//   location.href = '/'
+// })
+
+// document.querySelector('#checkOut').addEventListener('click', () => {
+//   location.href = '/checkout'
+// });
+
 document.querySelector('#homeCodex').addEventListener('click', () => {
   location.href = '/';
 })
@@ -5,6 +13,7 @@ document.querySelector('#homeCodex').addEventListener('click', () => {
 document.querySelector('#cartIcon').addEventListener('click', () => {
   location.href = '/cart';
 });
+
 
 const addToCartButton = document.querySelectorAll('.card-footer > button');
 
