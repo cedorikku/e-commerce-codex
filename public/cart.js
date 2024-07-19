@@ -42,15 +42,21 @@ function updateInput(inputNode, newValue) {
   if (newValue < 1) {
     return;
   }
-
-  // For controller
   const name = inputNode.closest('td').previousElementSibling.textContent;
 
-  // Update value
   inputNode.value = newValue;
+  fetch('/api/updateCart', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ prodName: name, quantity: newValue }),
+  })
+    .then(response => response.json())
+    .catch((error) => console.log('Error:', error))
 }
 
 function changeAmount(e) {
-  
+
   console.log("changed");
 }
