@@ -31,7 +31,7 @@ const addToCart = async (req, res) => {
 const getCart = async (req, res) => {
     const cartItems = await tempUserCart.find();
     console.log(cartItems)
-    res.render('cart', { cartItems });
+    res.json(cartItems);
 };
 
 module.exports = { renderProducts, addToCart, getCart};

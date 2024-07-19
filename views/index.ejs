@@ -72,6 +72,7 @@
                                     </div>
                                 </div>
                                 <% }) %>
+                                <% const zeroKitchenitems = items.filter(item => item category)
                             </div>
                         </div>
 
@@ -85,7 +86,7 @@
 
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="" class="card-img-top" alt="<%= product.name %>">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
                                             <% if(product.category === "Bathroom") { %>
                                             <h3><%= product.name %></h3>
@@ -110,7 +111,7 @@
 
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="" class="card-img-top" alt="<%= product.name %>">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
                                             <% if(product.category === "Living Room") { %>
                                             <h3><%= product.name %></h3>
@@ -129,13 +130,12 @@
                             <h5 class="text-center">Bedroom</h5>
                             <div class="row">
                                 <%  
-                                    const bedroomItems = items.filter(item => item.category === "Bedroom");
-                                    bedroomItems.forEach(product => { 
+                                    const bedroomArr = items.filter(item => item.category === "Bedroom" && item.stock >= 1);
+                                    bedroomArr.forEach(product => { 
                                 %>
-                                <% if(product.stock >= 1) { %>
                                 <div class="col-lg-4 col-6">
                                     <div class="card mb-3">
-                                        <img src="" class="card-img-top" alt="<%= product.name %>">
+                                        <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
                                         <div class="card-footer bg-primary text-light">
                                             <h3><%= product.name %></h3>
                                             <p>₱<span><%= product.price.toFixed(2)%></span></p>
@@ -144,11 +144,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <% } %>
-                                <% if(product.stock === 0){ %>
+                                <% }) %>
+                                <%  
+                                    const bedroomItemsZero = items.filter(item => item.category === "Bedroom" && item.stock === 0);
+                                    bedroomItemsZero.forEach(product => { 
+                                %>
                                     <div class="col-lg-4 col-6">
                                         <div class="card mb-3">
-                                            <img src="" class="card-img-top" alt="<%= product.name %>">
+                                            <img src="<%= product.picture %>" class="card-img-top" alt="<%= product.name %>">
                                             <div class="card-footer bg-primary text-light">
                                                 <h3><%= product.name %></h3>
                                                 <p>₱<span><%= product.price.toFixed(2)%></span></p>
@@ -156,7 +159,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <% } %>
                                 <% }) %>
                             </div>
                         </div>
@@ -211,7 +213,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    
+                    <!-- this is your modal body  -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
