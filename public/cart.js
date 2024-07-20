@@ -59,6 +59,7 @@ function updateInput(e) {
 
   // Nudge the database
   requestUpdateDatabase(name, newValue);
+  updateTable(inputNode);
 }
 
 function changeAmount(e) {
@@ -83,7 +84,27 @@ function changeAmount(e) {
   let name = inputNode.closest('td').previousElementSibling.innerText.trim();
 
   // Nudge the database
-  requestUpdateDatabase(name, newValue);
+  requestUpdateDatabase(name, newValue)
+  updateTable(inputNode);
+}
+
+const subtotalNode = document.querySelector('#totalPrice');
+
+function updateTable(inputNode) {
+  let quantity = parseInt(inputNode.value, 10);
+  // Child node 4 of a row is the item's price
+  let price = inputNode.closest('tr').children[4];
+  // Child node 5 of a row is the item's total
+  let totalNode = inputNode.closest('tr').children[5];
+
+  totalNode.textContent = '₱' + (quantity * Number(price.textContent.slice(1))).toFixed(2);
+
+  let totals = Array.from(document.querySelectorAll('.subtotal-data'));
+  let sum = totals.reduce((total, current) => {
+    return total + Number(current.innerText.slice(1));
+  }, 0);
+
+  subtotalNode.textContent = sum.toFixed(2);
 }
 
 function requestUpdateDatabase(name, newValue) {
