@@ -14,15 +14,11 @@ const updateButtons = document.querySelectorAll('.input-group > button');
 const quantity = document.querySelectorAll('.input-group > input');
 
 updateButtons.forEach(button => {
-  if (button.textContent === '-') {
-    button.addEventListener('click', (e) => decrement(e));
-  } else if (button.textContent === '+') {
-    button.addEventListener('click', (e) => increment(e));
-  }
+  button.addEventListener('click', (e) => updateInput(e));
 });
 
 quantity.forEach(input => {
-  input.addEventListener('change', (e) => (e));
+  input.addEventListener('change', (e) => changeAmount(e));
   // Prevent non-numeric inputs
   input.addEventListener('keypress', (e) => {
       if (!/^\d*$/.test(e.key)) {
@@ -31,25 +27,66 @@ quantity.forEach(input => {
   });
 });
 
-function decrement(e) {
-  let inputNode = e.target.nextElementSibling;
-  updateInput(inputNode, Number(inputNode.value) - 1);
-}
+function updateInput(e) {
+  let inputNode, newValue;
 
-function increment(e) {
-  let inputNode = e.target.previousElementSibling;
-  updateInput(inputNode, Number(inputNode.value) + 1);
-}
+  if (e.target.textContent === '-') {
+    // Decrement
+    inputNode = e.target.nextElementSibling;
+    newValue = parseInt(inputNode.value, 10) - 1;
+  } else if (e.target.textContent === '+') {
+    // Increment
+    inputNode = e.target.previousElementSibling;
+    newValue = parseInt(inputNode.value, 10) + 1;
+  }
 
-function updateInput(inputNode, newValue) {
-  if (!inputNode || inputNode == undefined) {
-    return;
+  // Additional Filtering
+  if (newValue == 0 || newValue < 1) {
+    // temporary method of asking to delete 
+    if (confirm('Are you sure you want to remove the item from your cart?')) {
+      // Delete item from cart
+      return;
+    } else {
+      newValue = 1;
+    }
   }
-  if (newValue < 1) {
-    return;
-  }
-  const name = inputNode.closest('td').previousElementSibling.innerText;
+
+  // Set the new value for client side
   inputNode.value = newValue;
+
+  // Get name of the updated product
+  let name = inputNode.closest('td').previousElementSibling.innerText.trim();
+
+  // Nudge the database
+  requestUpdateDatabase(name, newValue);
+}
+
+function changeAmount(e) {
+  let inputNode = e.target;
+  let newValue = parseInt(inputNode.value, 10);
+
+  if (inputNode.value.length > 1 && inputNode.value.charAt(0) == '0') {
+    inputNode.value = newValue;
+  }
+
+  if (newValue == 0 || newValue < 1) {
+    // temporary method of asking to delete 
+    if (confirm('Are you sure you want to remove the item from your cart?')) {
+      // Delete item from cart
+      return;
+    } else {
+      newValue = 1;
+    }
+  }
+
+  // Get name of the updated product
+  let name = inputNode.closest('td').previousElementSibling.innerText.trim();
+
+  // Nudge the database
+  requestUpdateDatabase(name, newValue);
+}
+
+async function requestUpdateDatabase(name, newValue) {
   fetch('/api/updateCart', {
     method: 'PUT',
     headers: {
@@ -57,14 +94,9 @@ function updateInput(inputNode, newValue) {
     },
     body: JSON.stringify({ 
       prodName: name.replace(/\s+/g, ' ').trim(), 
-      quantity: newValue }),
+      quantity: newValue 
+    }),
   })
     .then(response => response.json())
-    .catch((error) => console.log('Error:', error))
-    location.reload();
-}
-
-function changeAmount(e) {
-
-  console.log("changed");
+    .catch((error) => console.log('Error:', error));
 }

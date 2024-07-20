@@ -41,9 +41,30 @@ const getCart = async (req, res) => {
 };
 
 const updateCart = async (req, res) => {
-    const cartContents = await tempUserCart.findOne({name: req.body.prodName})
-    await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {qty: req.body.quantity})
-    await tempUserCart.findOneAndUpdate({_id: cartContents._id}, {subtotal: cartContents.qty * cartContents.price})
+    // Ensure first that there is a cart item
+    let cartId;
+    let cartItem;
+
+    try {
+        // Find
+        cartItem = await tempUserCart.findOne({name: req.body.prodName});
+        if (!cartItem) {
+            return res.status(404).json({ error: "Cart item not found" });
+        }
+        cartId = cartItem._id;
+
+        // Update
+        const newQuantity = parseInt(req.body.quantity, 10);
+        if (isNaN(newQuantity) || newQuantity < 1) { 
+            return res.status(400).json({ error: "Invalid quantity" });
+        }
+        
+        await tempUserCart.findOneAndUpdate({_id: cartId}, {qty: newQuantity});
+        await tempUserCart.findOneAndUpdate({_id: cartId}, {subtotal: newQuantity * cartItem.price})
+    } catch (error) {
+        console.error("Error: ", error);
+        res.status(500).json({ error: "Something went wrong" });
+    }
 }
 
 module.exports = { renderProducts, renderUserCart, addToCart, getCart, updateCart};
