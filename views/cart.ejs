@@ -40,12 +40,8 @@
                     <tbody>
                         <% cart.forEach(function(product, index) { %>
                             <tr class="align-middle">
-                                <th scope="row">
-                                    <%= index + 1 %>
-                                </th>
-                                <td class="col-lg-6 col-sm-3">
-                                    <%= product.name %>
-                                </td>
+                                <td scope="row"><%= index + 1 %></td>
+                                <td class="col-lg-6 col-sm-3"><%= product.name %></td>
                                 <td class="col-1">
                                     <div class="input-group input-group-sm">
                                         <button class="btn btn-outline-secondary" type="button">-</button>
@@ -54,11 +50,9 @@
                                         <button class="btn btn-outline-secondary" type="button">+</button>
                                     </div>
                                 </td>
-                                <td class="col-1">
-                                    temp
-                                </td>
+                                <td class="col-1">temp</td>
                                 <td>₱<%= product.price.toFixed(2) %></td>
-                                <td>₱<%= product.subtotal.toFixed(2) %></td>
+                                <td class="subtotal-data">₱<%= product.subtotal.toFixed(2) %></td>
                                 <td class="col-1">
                                     <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                 </td>
@@ -69,9 +63,9 @@
             </div>
             <div class="d-flex justify-content-end">
                 <% const subtotal=cart.reduce((sumTotal, item)=> sumTotal + item.subtotal, 0) %>
-                    <h4>Subtotal: ₱<span id="totalPrice">
-                            <%= subtotal.toFixed(2) %>
-                        </span></h4>
+                <h4>Subtotal: 
+                    ₱<span id="totalPrice"><%= subtotal.toFixed(2) %></span>
+                </h4>
             </div>
             <div class="mt-4 d-flex justify-content-between">
                 <button id="goBack" class="btn btn-secondary">Continue Shopping</button>
