@@ -51,6 +51,12 @@ function updateInput(e) {
     }
   }
 
+  // Child node 3 of a row is the item's stock
+  let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
+  if (newValue > stock) {
+    newValue = stock;
+  }
+
   // Set the new value for client side
   inputNode.value = newValue;
 
@@ -78,6 +84,13 @@ function changeAmount(e) {
     } else {
       newValue = 1;
     }
+  }
+
+  // Child node 3 of a row is the item's stock
+  let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
+  if (newValue > stock) {
+    newValue = stock;
+    inputNode.value = stock;
   }
 
   // Get name of the updated product
