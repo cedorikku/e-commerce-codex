@@ -61,7 +61,8 @@ function updateInput(e) {
   inputNode.value = newValue;
 
   // Get name of the updated product
-  let name = inputNode.closest('td').previousElementSibling.innerText.trim();
+  // Child node 1 of a row is the item's name
+  let name = inputNode.closest('tr').children[1].innerText.trim();
 
   // Nudge the database
   requestUpdateDatabase(name, newValue);
@@ -94,7 +95,8 @@ function changeAmount(e) {
   }
 
   // Get name of the updated product
-  let name = inputNode.closest('td').previousElementSibling.innerText.trim();
+  // Child node 1 of a row is the item's name
+  let name = inputNode.closest('tr').children[1].innerText.trim();
 
   // Nudge the database
   requestUpdateDatabase(name, newValue)
