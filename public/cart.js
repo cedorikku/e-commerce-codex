@@ -86,7 +86,7 @@ function changeAmount(e) {
   requestUpdateDatabase(name, newValue);
 }
 
-async function requestUpdateDatabase(name, newValue) {
+function requestUpdateDatabase(name, newValue) {
   fetch('/api/updateCart', {
     method: 'PUT',
     headers: {
