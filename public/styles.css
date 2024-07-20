@@ -149,10 +149,6 @@ i:hover {
     cursor: context-menu;
 }
 
-.main-content .card-disabled:hover .card-img-top {
-    transform: none;
-}
-
 .main-content  .btn-outline-light {
     margin-top: 16px;
     width: 100%;
@@ -220,20 +216,33 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Remove number arrows in Firefox */
+/* Remove number arrows in Firefox
 input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 .input-group > input[type=number] {
   text-align: center;
 }
+.btn-primary {
+    background-color: black;
+    border-color: black;
+  }
+  
+  .btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+  }
 
-@media (max-width: 870px) {
-    * {
-        font-size: 2.3vw;
-    }
-    .container {
-        max-width: 100% !important;
-    }
+.form-control:focus {
+    border-color: black;
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25); /* Adjust the color as needed */
+}
+
+.form-select:focus {
+    border-color: black;
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25); /* Adjust the color as needed */
+}
+.invalid-feedback {
+    color: red;
 }
