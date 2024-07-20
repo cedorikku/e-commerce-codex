@@ -50,7 +50,16 @@
                                         <button class="btn btn-outline-secondary" type="button">+</button>
                                     </div>
                                 </td>
-                                <td class="col-1">temp</td>
+                                <% 
+                                    let stock;
+                                    for (let item of inventory) {
+                                        if (product.name ===  item.name) {
+                                            stock = item.stock;
+                                            break;
+                                        }
+                                    };
+                                %>
+                                <td class="col-1"><%= stock %></td>
                                 <td>₱<%= product.price.toFixed(2) %></td>
                                 <td class="subtotal-data">₱<%= product.subtotal.toFixed(2) %></td>
                                 <td class="col-1">
