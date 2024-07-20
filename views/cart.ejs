@@ -31,6 +31,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Item</th>
                             <th scope="col">Quantity</th>
+                            <th scope="col">Stock</th>
                             <th scope="col">Price</th>
                             <th scope="col">Total</th>
                             <th scope="col">Actions</th>
@@ -53,10 +54,11 @@
                                         <button class="btn btn-outline-secondary" type="button">+</button>
                                     </div>
                                 </td>
-                                <td>₱<%= product.price.toFixed(2) %>
+                                <td class="col-1">
+                                    temp
                                 </td>
-                                <td>₱<%= product.subtotal.toFixed(2) %>
-                                </td>
+                                <td>₱<%= product.price.toFixed(2) %></td>
+                                <td>₱<%= product.subtotal.toFixed(2) %></td>
                                 <td class="col-1">
                                     <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                 </td>
