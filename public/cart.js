@@ -28,7 +28,7 @@ quantity.forEach(input => {
 });
 
 function updateInput(e) {
-  let inputNode, newValue;
+  let inputNode, newValue, curr = e.target.closest('tr').children[1].innerText.trim();
 
   if (e.target.textContent === '-') {
     // Decrement
@@ -44,8 +44,8 @@ function updateInput(e) {
   if (newValue == 0 || newValue < 1) {
     // temporary method of asking to delete 
     if (confirm('Are you sure you want to remove the item from your cart?')) {
-      // Delete item from cart
-      return;
+      deleteItem(curr);
+      location.reload();
     } else {
       newValue = 1;
     }
@@ -72,28 +72,29 @@ function updateInput(e) {
 function changeAmount(e) {
   let inputNode = e.target;
   let newValue = parseInt(inputNode.value, 10);
+  const currItem = e.target.closest('tr').children[1].innerText.trim()
 
   if (inputNode.value.length > 1 && inputNode.value.charAt(0) == '0') {
     inputNode.value = newValue;
   }
-
+  
   if (newValue == 0 || newValue < 1) {
     // temporary method of asking to delete 
     if (confirm('Are you sure you want to remove the item from your cart?')) {
-      // Delete item from cart
-      return;
+      deleteItem(curr);
+      location.reload();
     } else {
       newValue = 1;
     }
   }
-
+  
   // Child node 3 of a row is the item's stock
   let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
   if (newValue > stock) {
     newValue = stock;
     inputNode.value = stock;
   }
-
+  
   // Get name of the updated product
   // Child node 1 of a row is the item's name
   let name = inputNode.closest('tr').children[1].innerText.trim();
@@ -122,6 +123,19 @@ function updateTable(inputNode) {
   subtotalNode.textContent = sum.toFixed(2);
 }
 
+const deleteBtn = document.querySelectorAll('.btn-danger');
+deleteBtn.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const currItem = e.target.closest('tr').children[1].innerText.trim()
+    if (confirm('Are you sure you want to remove the item from your cart?')) {
+      deleteItem(currItem);
+    } else {
+      return;
+    }
+    location.reload();
+  })
+})
+
 function requestUpdateDatabase(name, newValue) {
   fetch('/api/updateCart', {
     method: 'PUT',
@@ -135,4 +149,14 @@ function requestUpdateDatabase(name, newValue) {
   })
     .then(response => response.json())
     .catch((error) => console.log('Error:', error));
+}
+
+function deleteItem(name) {
+  fetch('/api/deleteItem', {
+    method: 'DELETE', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({name}),
+  })
 }

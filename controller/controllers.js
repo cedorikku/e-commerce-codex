@@ -94,4 +94,9 @@ const checkOut = async (req, res) => {
     await tempUserCart.deleteMany();
 }
 
-module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout, checkOut };
+const deleteCartItem = async (req, res) => {
+    const findID = await tempUserCart.findOne({name: req.body.name})
+    await tempUserCart.deleteOne({_id: findID})
+}
+
+module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout, checkOut, deleteCartItem };
