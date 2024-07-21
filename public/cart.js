@@ -43,15 +43,11 @@ function updateInput(e) {
 
   // Additional Filtering
   if (newValue == 0 || newValue < 1) {
-    // temporary method of asking to delete 
-    if (confirm('Are you sure you want to remove the item from your cart?')) {
-      deleteItem(curr);
-      location.reload();
-    } else {
-      newValue = 1;
-    }
+    deleteModal(curr);
+  } else {
+    newValue = 1;
   }
-
+    
   // Child node 3 of a row is the item's stock
   let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
   if (newValue > stock) {
@@ -80,13 +76,9 @@ function changeAmount(e) {
   }
   
   if (newValue == 0 || newValue < 1) {
-    // temporary method of asking to delete 
-    if (confirm('Are you sure you want to remove the item from your cart?')) {
-      deleteItem(currItem);
-      location.reload();
-    } else {
-      newValue = 1;
-    }
+    deleteModal(currItem);
+  } else {
+    newValue = 1;
   }
   
   // Child node 3 of a row is the item's stock
@@ -124,16 +116,26 @@ function updateTable(inputNode) {
   subtotalNode.textContent = sum.toFixed(2);
 }
 
-const deleteBtn = document.querySelectorAll('.btn-danger');
+const deleteBtn = document.querySelectorAll('.delBtn');
 deleteBtn.forEach(button => {
-  button.addEventListener('click', async (e) => { // Marked as async
+  button.addEventListener('click', async (e) => {
     const currItem = e.target.closest('tr').children[1].innerText.trim();
-    if (confirm('Are you sure you want to remove the item from your cart?')) {
-      await deleteItem(currItem);
-      location.reload(); 
-    }
+    deleteModal(currItem);
   });
 });
+
+function deleteModal(name) {
+  const modalDeleteQuery = document.querySelector('#deleteItemModal');
+  const deleteModal = new bootstrap.Modal(modalDeleteQuery);
+  deleteModal.show();
+  if (modalDeleteQuery.querySelector('.actNo')) {
+    return;
+  };
+  if (modalDeleteQuery.querySelector('#actYes')) {
+    deleteItem(name);
+    location.reload();
+  }
+}
 
 function requestUpdateDatabase(name, newValue) {
   fetch('/api/updateCart', {
