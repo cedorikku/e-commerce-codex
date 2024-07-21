@@ -1,17 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('checkoutForm');
-    const placeOrderButton = document.getElementById('placeOrderButton');
+document.querySelector('#home').addEventListener('click', () => {
+    location.href = '/'
+})
 
-    placeOrderButton.addEventListener('click', (e) => {
-        e.preventDefault();
+document.querySelector('#cartIcon').addEventListener('click', () => {
+    location.href = '/cart'
+})
 
-        form.classList.remove('was-validated');
-        
-        if (form.checkValidity()) {
-            const orderPlacedModal = new bootstrap.Modal(document.getElementById('orderPlacedModal'));
-            orderPlacedModal.show();
-        } else {
-            form.classList.add('was-validated');
-        }
-    });
+const form = document.querySelector('#checkoutForm');
+const placeOrderButton = document.querySelector('#placeOrderButton');
+
+placeOrderButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    form.classList.remove('was-validated');
+
+    if (form.checkValidity()) {
+        const orderPlacedModal = new bootstrap.Modal(document.querySelector('#orderPlacedModal'));
+        orderPlacedModal.show();
+    } else {
+        form.classList.add('was-validated');
+    }
 });
