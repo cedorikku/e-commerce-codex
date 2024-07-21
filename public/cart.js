@@ -128,13 +128,10 @@ function deleteModal(name) {
   const modalDeleteQuery = document.querySelector('#deleteItemModal');
   const deleteModal = new bootstrap.Modal(modalDeleteQuery);
   deleteModal.show();
-  if (modalDeleteQuery.querySelector('.actNo')) {
-    return;
-  };
-  if (modalDeleteQuery.querySelector('#actYes')) {
+  modalDeleteQuery.querySelector('#actYes').addEventListener('click', (e) => {
     deleteItem(name);
     location.reload();
-  }
+  });
 }
 
 function requestUpdateDatabase(name, newValue) {
