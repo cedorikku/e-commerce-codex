@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const { Inventory } = require('../models/inventory');
 const { tempUserCart } = require('../models/tempCart');
+const { checkouts } = require('../models/checkouts');
 app.use(express.json())
 
 const renderProducts = async (req, res) => {
@@ -67,4 +68,24 @@ const renderCheckout = async (req, res) => {
     res.render('checkout', { cart })
 }
 
-module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout };
+const checkOut = async (req, res) => {
+    const cart = await tempUserCart.find();
+    const sf = 49, initialamount = cart.aggregate([{$group: {_id: null, sumTotal: {$sum: "subtotal"}}}]);
+
+    const userCheckout = new checkouts({
+        fullname: req.body.fullname,
+        email: req.body.email,
+        address: req.body.address,
+        city: req.body.city,
+        zipcode: req.body.zipcode,
+        country: req.body.country,
+        mop: req.body.mop,
+        sf: sf,
+        initialamount: initialamount,
+        grandtotal: sf + initialamount,
+        usercart: cart
+    })
+    userCheckout.save()
+}
+
+module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout, checkOut };
