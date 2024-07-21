@@ -28,7 +28,7 @@ app.get('/checkout', (req, res) => {
   controller.renderCheckout(req, res);
 })
 
-app.post('api/checkoutData', (req, res) => {
+app.post('/api/checkoutData', (req, res) => {
   controller.checkOut(req, res);
 })
 
