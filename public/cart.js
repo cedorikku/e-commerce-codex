@@ -79,6 +79,7 @@ function changeAmount(e) {
   if (newValue < 1) {
     if(deleteModal(currItem) === 1){
       inputNode.value = 1;
+      newValue = inputNode.value;
     };
   } 
   
@@ -87,9 +88,7 @@ function changeAmount(e) {
   if (newValue > stock) {
     newValue = stock;
     inputNode.value = stock;
-  } else {
-    newValue = inputNode.value;
-  }
+  } 
   
   // Get name of the updated product
   // Child node 1 of a row is the item's name
