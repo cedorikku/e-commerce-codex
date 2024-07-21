@@ -43,8 +43,8 @@ function updateInput(e) {
   }
 
   // Additional Filtering
-  if (newValue == 0 || newValue < 1) {
-    if(deleteModal(curr) === 1){
+  if (newValue < 1) {
+    if(deleteModal(currItem) === 1){
       newValue = 1;
     };
   } 
@@ -76,9 +76,9 @@ function changeAmount(e) {
     inputNode.value = newValue;
   }
   
-  if (newValue == 0 || newValue < 1) {
+  if (newValue < 1) {
     if(deleteModal(currItem) === 1){
-      newValue = 1;
+      inputNode.value = 1;
     };
   } 
   
@@ -87,6 +87,8 @@ function changeAmount(e) {
   if (newValue > stock) {
     newValue = stock;
     inputNode.value = stock;
+  } else {
+    newValue = inputNode.value;
   }
   
   // Get name of the updated product
@@ -133,9 +135,7 @@ function deleteModal(name) {
     deleteItem(name);
     location.reload();
   });
-  modalDeleteQuery.querySelectorAll('.actNo').addEventListener('click', (e) => {
-    return 1;
-  })
+  return 1;
 }
 
 function requestUpdateDatabase(name, newValue) {
