@@ -70,8 +70,11 @@ const renderCheckout = async (req, res) => {
 
 const checkOut = async (req, res) => {
     const cart = await tempUserCart.find();
-    const sf = 49, initialamount = cart.aggregate([{$group: {_id: null, sumTotal: {$sum: "subtotal"}}}]);
-
+    const result = await tempUserCart.aggregate([
+        { $group: { _id: null, sumTotal: { $sum: "$subtotal" } } }
+      ]);
+    const sf = 49, initialamount = result.length > 0 ? result[0].sumTotal : 0;
+    console.log(initialamount)
     const userCheckout = new checkouts({
         fullname: req.body.fullname,
         email: req.body.email,
