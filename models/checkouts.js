@@ -12,7 +12,7 @@ const checkoutsSchema = new mongoose.Schema({
     initialamount: { type: Number, required: true },
     grandtotal: { type: Number, required: true },
     usercart: []
-});
+}, { timestamps: true });
 
 const checkouts = mongoose.model('checkouts', checkoutsSchema);
 module.exports = { checkouts };
