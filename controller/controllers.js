@@ -74,7 +74,6 @@ const checkOut = async (req, res) => {
         { $group: { _id: null, sumTotal: { $sum: "$subtotal" } } }
       ]);
     const sf = 49, initialamount = result.length > 0 ? result[0].sumTotal : 0;
-    console.log(initialamount)
     const userCheckout = new checkouts({
         fullname: req.body.fullname,
         email: req.body.email,
