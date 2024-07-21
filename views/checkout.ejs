@@ -84,19 +84,19 @@
                         <div class="col-lg-4">
                             <h4>Order Summary</h4>
                             <ul class="list-group mb-3">
-                                <% let totalAmount = 49
-                                cart.forEach(item => { %>
+                                <% cart.forEach(item => { %>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span><%= item.name %></span>
                                         <span>₱<%= item.subtotal.toFixed(2) %></span>
                                     </li>
-                                <% totalAmount += item.subtotal }) %>
+                                <% }) %>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <em>Shipping Fee</em>
                                     <em>₱49.00</em>
-                                </li>
+                                </li> 
                                 <li class="list-group-item d-flex justify-content-between bg-total">
                                     <strong>Total</strong>
+                                    <% const totalAmount = cart.reduce((sumtotal, cartItem) => sumtotal + cartItem.subtotal, 49) %>
                                     <strong>₱<%= totalAmount.toFixed(2) %></strong>
                                 </li>
                             </ul>
