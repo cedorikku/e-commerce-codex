@@ -24,6 +24,10 @@ app.put('/api/updateCart', (req, res) => {
   controller.updateCart(req,res);
 });
 
+app.get('/checkout', (req, res) => {
+  controller.renderCheckout(req, res);
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
