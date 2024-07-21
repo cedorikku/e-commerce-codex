@@ -35,11 +35,6 @@ const addToCart = async (req, res) => {
     };
 };
 
-const getCart = async (req, res) => {
-    const cartItems = await tempUserCart.find();
-    res.json(cartItems);
-};
-
 const updateCart = async (req, res) => {
     // Ensure first that there is a cart item
     let cartId;
@@ -67,4 +62,4 @@ const updateCart = async (req, res) => {
     }
 }
 
-module.exports = { renderProducts, renderUserCart, addToCart, getCart, updateCart};
+module.exports = { renderProducts, renderUserCart, addToCart, updateCart};

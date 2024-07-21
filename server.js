@@ -20,10 +20,6 @@ app.get('/cart', (req, res) => {
   controller.renderUserCart(req, res);
 });
 
-app.get('/api/getCart', (req, res) =>  {
-  controller.getCart(req,res);
-});
-
 app.put('/api/updateCart', (req, res) => {
   controller.updateCart(req,res);
 });
