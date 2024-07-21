@@ -29,8 +29,12 @@ placeOrderButton.addEventListener('click', (e) => {
         const country = document.querySelector('#country').value;
         const mop = document.querySelector('#paymentMethod').value;
         checkoutData(fullname, email, address, city, zipcode, country, mop);
-        const orderPlacedModal = new bootstrap.Modal(document.querySelector('#orderPlacedModal'));
+        const modalQuery = document.querySelector('#orderPlacedModal');
+        const orderPlacedModal = new bootstrap.Modal(modalQuery);
         orderPlacedModal.show();
+        if(modalQuery.addEventListener('hidden.bs.modal', (e) => {
+            location.href = '/'
+        }));
     } else {
         form.classList.add('was-validated');
     }
