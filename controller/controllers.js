@@ -62,4 +62,9 @@ const updateCart = async (req, res) => {
     }
 }
 
-module.exports = { renderProducts, renderUserCart, addToCart, updateCart};
+const renderCheckout = async (req, res) => {
+    const cart = await tempUserCart.find();
+    res.render('checkout', { cart })
+}
+
+module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout };
