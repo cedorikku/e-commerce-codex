@@ -43,10 +43,10 @@ function updateInput(e) {
 
   // Additional Filtering
   if (newValue == 0 || newValue < 1) {
-    deleteModal(curr);
-  } else {
-    newValue = 1;
-  }
+    if(deleteModal(currItem) === 1){
+      newValue = 1;
+    };
+  } 
     
   // Child node 3 of a row is the item's stock
   let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
@@ -76,10 +76,10 @@ function changeAmount(e) {
   }
   
   if (newValue == 0 || newValue < 1) {
-    deleteModal(currItem);
-  } else {
-    newValue = 1;
-  }
+    if(deleteModal(currItem) === 1){
+      newValue = 1;
+    };
+  } 
   
   // Child node 3 of a row is the item's stock
   let stock = parseInt(inputNode.closest('tr').children[3].innerText, 10);
@@ -132,6 +132,9 @@ function deleteModal(name) {
     deleteItem(name);
     location.reload();
   });
+  modalDeleteQuery.querySelectorAll('.actNo').addEventListener('click', (e) => {
+    return 1;
+  })
 }
 
 function requestUpdateDatabase(name, newValue) {
