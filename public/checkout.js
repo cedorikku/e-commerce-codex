@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); // Prevent the default form submission
 
         // Remove previous validation states
-        // form.classList.remove('was-validated');
+        form.classList.remove('was-validated');
         
         // Check form validity
         if (form.checkValidity()) {
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             orderPlacedModal.show();
         } else {
             // If form is invalid, trigger HTML5 form validation
-            // form.classList.add('was-validated');
+            // form.classList.
+            add('was-validated');
         }
     });
 });
