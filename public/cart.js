@@ -6,9 +6,10 @@ document.querySelector('#backBTN').addEventListener('click', () => {
   location.href = '/'
 })
 
-document.querySelector('#checkOut').addEventListener('click', () => {
-  location.href = '/checkout'
-});
+const checkingOut = document.querySelector('#checkOut');
+if(checkingOut != null) {
+  checkingOut.addEventListener('click', () => { location.href = '/checkout'});
+}
 
 const updateButtons = document.querySelectorAll('.input-group > button');
 const quantity = document.querySelectorAll('.input-group > input');
