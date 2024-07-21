@@ -126,16 +126,14 @@ function updateTable(inputNode) {
 
 const deleteBtn = document.querySelectorAll('.btn-danger');
 deleteBtn.forEach(button => {
-  button.addEventListener('click', (e) => {
-    const currItem = e.target.closest('tr').children[1].innerText.trim()
+  button.addEventListener('click', async (e) => { // Marked as async
+    const currItem = e.target.closest('tr').children[1].innerText.trim();
     if (confirm('Are you sure you want to remove the item from your cart?')) {
-      deleteItem(currItem);
-    } else {
-      return;
+      await deleteItem(currItem);
+      location.reload(); 
     }
-    location.reload();
-  })
-})
+  });
+});
 
 function requestUpdateDatabase(name, newValue) {
   fetch('/api/updateCart', {
