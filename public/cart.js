@@ -82,7 +82,7 @@ function changeAmount(e) {
   if (newValue == 0 || newValue < 1) {
     // temporary method of asking to delete 
     if (confirm('Are you sure you want to remove the item from your cart?')) {
-      deleteItem(curr);
+      deleteItem(currItem);
       location.reload();
     } else {
       newValue = 1;
