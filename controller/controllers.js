@@ -88,6 +88,10 @@ const checkOut = async (req, res) => {
         usercart: cart
     })
     userCheckout.save()
+    for(const item of cart) {
+        await Inventory.findOneAndUpdate({name: item.name}, {$inc: {stock : -item.qty}})
+    }
+    await tempUserCart.deleteMany();
 }
 
 module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout, checkOut };
