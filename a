@@ -1,0 +1,207 @@
+[33mcommit ababd7929e3ed111c99840f19d8f37aed882fbd0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnodeify[m[33m, [m[1;31morigin/nodeify[m[33m)[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 20:06:45 2024 +0800
+
+    Update size and animation of cart button
+
+[33mcommit 4b4cd1c08a78599045b556caaa1d9eb748876e93[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 19:46:58 2024 +0800
+
+    Initialize to ignore node modules
+
+[33mcommit aec3d43f75fee5ee14ad0546ad424410bd9bff9c[m
+Author: MrCLorenz <clsia0328@gmail.com>
+Date:   Wed Jul 17 15:36:33 2024 +0800
+
+    Added add to cart button
+
+[33mcommit ce23580dc6977dd267a07f839fab45d2943bd922[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 15:29:12 2024 +0800
+
+    Replace Yen to Peso
+
+[33mcommit 12165da875670a57c9aff57ff98de93596dcd59b[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 15:13:19 2024 +0800
+
+    Install bootstrap icons
+
+[33mcommit c7327579c1bf0cbf12fa304efb3e69ee57404d4a[m
+Author: MrCLorenz <clsia0328@gmail.com>
+Date:   Wed Jul 17 14:08:31 2024 +0800
+
+    Nav bar bg change
+
+[33mcommit 4c0aa7fc8f760a6c824abe802daa102d715e26e9[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 13:22:35 2024 +0800
+
+    Delete duplicate
+
+[33mcommit 3376aee693c06e235e99a39c8043a70b9dd428a5[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 11:19:26 2024 +0800
+
+    Include nodemon package
+
+[33mcommit 4e0b1d18add0f1cc130c2f9efc60af3cb043ab01[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 11:14:01 2024 +0800
+
+    Rewrite mongoose connection
+
+[33mcommit e870c8560e824adfccb36b9f0145407e017b3220[m
+Merge: 987a500 9a37a53
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:50:47 2024 +0800
+
+    Merge branch 'nodeify' of github.com:cedorikku/e-commerce-codex into nodeify
+
+[33mcommit 987a500e612ff94f75eafd566e542d614165ed4e[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:50:12 2024 +0800
+
+    Change database name
+
+[33mcommit af9c3a1e4a55d7afb45c0ff30b85522af9b12112[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:37:52 2024 +0800
+
+    Products schema
+
+[33mcommit 9a37a532551eca8e0bc0565fc703fc8d40e07075[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:37:52 2024 +0800
+
+    Inventory schema
+
+[33mcommit ebee37335be8752775af8060544ad9b930dcc385[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:30:45 2024 +0800
+
+    Throw error when db has problem(?)
+
+[33mcommit 06c02160ec01e838f90cc0bcc475e82b716e71c9[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:24:17 2024 +0800
+
+    Upload temp server configuration
+
+[33mcommit ada27845d42986a7a1a9406a43f5ce72e9923387[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 10:19:42 2024 +0800
+
+    Move to public
+
+[33mcommit 032281c9a207b1112eef8fedf84a0f02c25fef56[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:59:53 2024 +0800
+
+    Move to static directory
+
+[33mcommit 0fa5c904bf37995be75d810251e532520a8a6fc9[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:57:46 2024 +0800
+
+    Node packages
+
+[33mcommit 1d699d9dd029338777e3787d4fed6b6a45f7c145[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:54:46 2024 +0800
+
+    Undo last commit
+
+[33mcommit 01c4f5fd9d03ffc09ffb2f65a01262d5ac1c6d14[m
+Merge: 9222cfa 70aa879
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:49:57 2024 +0800
+
+    Merge branch 'nodeify' of github.com:cedorikku/e-commerce-codex into nodeify
+
+[33mcommit 9222cfa86be505105584dc7cd1939a29b5268020[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:42:25 2024 +0800
+
+    test
+
+[33mcommit 70aa879bbbba3ebdd46d38073cb4a08b613eec50[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:42:25 2024 +0800
+
+    Test
+
+[33mcommit ec779a168f50fbc04957010053aaafbde534e1a8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Wed Jul 17 09:31:42 2024 +0800
+
+    Remove inline styling
+
+[33mcommit 7eef38c80a6a5ebe15968d88c28a8c3b4ffcc8cd[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 21:15:43 2024 +0800
+
+    Upload simple styling
+
+[33mcommit fe60ec4cade0ed50789d4c970a0c7272270abb3a[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 21:03:07 2024 +0800
+
+    Link last 10 images in document
+
+[33mcommit 746d6ce7ca3d2ad1e99871f6cf7e5d70dfa7d21b[m
+Merge: ebc2aa7 b6d9e9e
+Author: MrCLorenz <clsia0328@gmail.com>
+Date:   Mon Jul 15 17:18:58 2024 +0800
+
+    Merge branch 'main' of https://github.com/cedorikku/e-commerce-codex
+
+[33mcommit ebc2aa73d10c77a52b5c9285ab610202dc6d9a6f[m
+Author: MrCLorenz <clsia0328@gmail.com>
+Date:   Mon Jul 15 17:18:43 2024 +0800
+
+    added pan picture and modified kitchen and bathroom pictures
+
+[33mcommit b6d9e9e42add0336cd9acd31c3469ac056d88443[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 17:15:59 2024 +0800
+
+    Upload bedroom images
+
+[33mcommit 6e3c2fbd02171b3893e3e2ca244254cf0d1c6388[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 17:07:05 2024 +0800
+
+    Upload living room images
+
+[33mcommit 8a36c22af16797594ba16e642e9f5be6c9592bfe[m
+Merge: 00959b5 510379a
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 16:55:09 2024 +0800
+
+    Merge branch 'main' of github.com:cedorikku/e-commerce-codex
+
+[33mcommit 00959b5970831bb0d75ed241c831dcb0c044acb3[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 16:54:46 2024 +0800
+
+    Initialize base page
+
+[33mcommit 510379abefa33df9ef2641d59b92ffe682bcfe71[m
+Author: MrCLorenz <clsia0328@gmail.com>
+Date:   Mon Jul 15 16:52:06 2024 +0800
+
+    Added Bathroom and Kitchen Pictures
+
+[33mcommit a959c06bcb5ae4ee80bc4eb4e669fca45316c245[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 16:31:41 2024 +0800
+
+    Place sample image
+
+[33mcommit 09acf773e4c784e1bdf6abb8b7c4a979cb8ad4b6[m
+Author: Cedric <75742716+cedorikku@users.noreply.github.com>
+Date:   Mon Jul 15 16:19:44 2024 +0800
+
+    Initial commit
