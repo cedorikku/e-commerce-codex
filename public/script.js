@@ -68,19 +68,3 @@ function addToCartClicked() {
   toast.show();
 
 }
-document.querySelector('#addToCart').addEventListener(() => {
-  fetch('/api/getCart', {
-    method: 'GET', // Use GET method for fetching data
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Cart items:', data);
-  })
-  .catch(error => {
-    console.error('Error fetching cart items:', error);
-  });
-});
-
