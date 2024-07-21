@@ -9,6 +9,12 @@ document.querySelector('#cartIcon').addEventListener('click', () => {
 const form = document.querySelector('#checkoutForm');
 const placeOrderButton = document.querySelector('#placeOrderButton');
 
+document.querySelector('#zip').addEventListener('keydown', (e) => {
+    if (e.key !== 'Backspace' && e.key !== 'Tab' && e.key !== 'Enter' && !/^[0-9]*$/.test(e.key)) {
+        e.preventDefault();
+    }
+})
+
 placeOrderButton.addEventListener('click', (e) => {
     e.preventDefault();
 
