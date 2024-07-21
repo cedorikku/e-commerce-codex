@@ -29,7 +29,8 @@ quantity.forEach(input => {
 });
 
 function updateInput(e) {
-  let inputNode, newValue, curr = e.target.closest('tr').children[1].innerText.trim();
+  let inputNode, newValue;
+  const currItem = e.target.closest('tr').children[1].innerText.trim();
 
   if (e.target.textContent === '-') {
     // Decrement
@@ -43,7 +44,7 @@ function updateInput(e) {
 
   // Additional Filtering
   if (newValue == 0 || newValue < 1) {
-    if(deleteModal(currItem) === 1){
+    if(deleteModal(curr) === 1){
       newValue = 1;
     };
   } 
