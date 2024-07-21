@@ -47,16 +47,16 @@ i:hover {
     background: var(--background);
 }
 
-.navbar a {
+.navbar a, .navbar a:hover {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 400;
     color: var(--text-secondary);
+    cursor: pointer;
 }
 
 .navbar a,
 .footer a {
-    font-family: 'Dela Gothic One', monospace;
     font-size: 1.45rem;
 }
 
@@ -221,8 +221,9 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-Remove number arrows in Firefox input[type=number] {
+input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .input-group>input[type=number] {
