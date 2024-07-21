@@ -9,15 +9,18 @@
     --accent: #b200ff;
     --no-stock: #800000;
 }
+
 @keyframes slideIn {
     from {
         transform: translateX(0%);
     }
+
     to {
         transform: translateX(3%);
     }
 }
-*{
+
+* {
     font-family: "Poppins", sans-serif !important;
 }
 
@@ -105,7 +108,7 @@ i:hover {
 
 .main-content .card:hover {
     cursor: pointer;
-    box-shadow: 0 10px 25px 5px rgb(90,90,90, 0.33);
+    box-shadow: 0 10px 25px 5px rgb(90, 90, 90, 0.33);
 }
 
 .main-content .card-img-top {
@@ -139,6 +142,7 @@ i:hover {
     font-style: italic;
     font-weight: 500;
 }
+
 .main-content .card-footer p span {
     font-size: 1rem;
     font-style: italic;
@@ -149,7 +153,7 @@ i:hover {
     cursor: context-menu;
 }
 
-.main-content  .btn-outline-light {
+.main-content .btn-outline-light {
     margin-top: 16px;
     width: 100%;
 }
@@ -182,7 +186,7 @@ i:hover {
 
 .toast {
     border-radius: 10px;
-    animation: slideIn 1s ease-out forwards; 
+    animation: slideIn 1s ease-out forwards;
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -190,59 +194,61 @@ i:hover {
 }
 
 .toast-header {
-    background-color: #313131!important; 
-    color: #ffffff!important;
+    background-color: #313131 !important;
+    color: #ffffff !important;
 }
 
 .toast-body {
-    background-color: #ffffff; 
-    color: #000000; 
+    background-color: #ffffff;
+    color: #000000;
 }
+
 .toast .btn-close {
-    color: #fff!important; 
-    opacity: 1; 
-    font-size: 1rem; 
-    text-shadow: none; 
+    color: #fff !important;
+    opacity: 1;
+    font-size: 1rem;
+    text-shadow: none;
     box-shadow: none;
 }
+
 .toast.show {
     opacity: 1;
 }
 
-/* Remove number arrows in Chromium */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-/* Remove number arrows in Firefox
-input[type=number] {
-  -moz-appearance: textfield;
-} */
-
-.input-group > input[type=number] {
-  text-align: center;
+Remove number arrows in Firefox input[type=number] {
+    -moz-appearance: textfield;
 }
+
+.input-group>input[type=number] {
+    text-align: center;
+}
+
 .btn-primary {
     background-color: black;
     border-color: black;
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: #333;
     border-color: #333;
-  }
+}
 
 .form-control:focus {
     border-color: black;
-    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25); /* Adjust the color as needed */
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25);
 }
 
 .form-select:focus {
     border-color: black;
-    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25); /* Adjust the color as needed */
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25);
 }
+
 .invalid-feedback {
     color: red;
 }
