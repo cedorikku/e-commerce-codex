@@ -267,3 +267,12 @@ input[type=number] {
     background-color: var(--background);
     color: var(--text-secondary);
 }
+
+ @media (max-width: 870px) {
+    * {
+        font-size: 2.3vw;
+    }
+    .container {
+        max-width: 100% !important;
+    }
+}
