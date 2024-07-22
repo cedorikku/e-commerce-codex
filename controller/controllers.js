@@ -69,7 +69,11 @@ const updateCart = async (req, res) => {
 
 const renderCheckout = async (req, res) => {
     const cart = await tempUserCart.find();
-    res.render('checkout', { cart })
+    if (!cart || cart.length === 0) {
+        res.redirect('/');
+    } else {
+        res.render('checkout', { cart })
+    }
 }
 
 const checkOut = async (req, res) => {
