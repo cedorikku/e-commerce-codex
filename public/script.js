@@ -35,9 +35,9 @@ function addToCartClicked() {
       document.body.appendChild(toastContainer);
   }
 
-  var toastId = 'cartToast' + new Date().getTime();
+  let toastId = 'cartToast' + new Date().getTime();
 
-  var toastElement = document.createElement('div');
+  let toastElement = document.createElement('div');
   toastElement.id = toastId;
   toastElement.className = 'toast hide';
   toastElement.role = 'alert';
@@ -55,10 +55,10 @@ function addToCartClicked() {
 
   document.getElementById('toastContainer').appendChild(toastElement);
 
-  var style = document.createElement('style');    
+  let style = document.createElement('style');    
   document.getElementsByTagName('head')[0].appendChild(style);
 
-  var toast = new bootstrap.Toast(toastElement);
+  let toast = new bootstrap.Toast(toastElement);
   toastElement.addEventListener('show.bs.toast', function () {
       toastElement.style.opacity = 0;
       setTimeout(() => {
