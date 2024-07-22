@@ -65,6 +65,15 @@ function updateInput(e) {
   // Nudge the database
   requestUpdateDatabase(name, newValue);
   updateTable(inputNode);
+
+  const updateDelay = 800;
+  const updateButtons = document.querySelectorAll('.input-group button');
+  updateButtons.forEach(button => {
+    button.disabled = true;
+    setTimeout(() => {
+      button.disabled = false;
+    }, updateDelay);
+  });
 }
 
 function changeAmount(e) {
