@@ -8,23 +8,11 @@ document.querySelector('#cartIcon').addEventListener('click', () => {
 
 const addToCartButton = document.querySelectorAll('.card-footer > button');
 
-const debounce = (func, delay) => {
-  let timeoutId;
-  return function (...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-};
-
-addToCartButton.forEach(button => button.addEventListener('click', (e) => {
-  toastModal();
-  debounce(addToCart, 200)
-}))
+addToCartButton.forEach(button => button.addEventListener('click', (e) => { addToCart(e); }));
 
 function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
+  toastModal();
 
   fetch('/api/cart', {
     method: 'PUT',

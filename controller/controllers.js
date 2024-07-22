@@ -23,6 +23,7 @@ const addToCart = async (req, res) => {
     if (tempItem) {
         if (tempItem.qty < item.stock){
             await tempUserCart.findOneAndUpdate({name: item.name}, { $inc: { qty: 1, subtotal: item.price }});
+            res.status(201).json({ message: "Success! Cart updated." });
         }
     } else {
         const newItem = new tempUserCart({
@@ -34,6 +35,7 @@ const addToCart = async (req, res) => {
             subtotal: item.price * 1
         })
         newItem.save()
+        res.status(201).json({ message: "Success! Item added to cart." });
     };
 };
 
@@ -58,6 +60,7 @@ const updateCart = async (req, res) => {
         
         await tempUserCart.findOneAndUpdate({_id: cartId}, {qty: newQuantity});
         await tempUserCart.findOneAndUpdate({_id: cartId}, {subtotal: newQuantity * cartItem.price})
+        res.status(201).json({ message: "Success! Cart updated." });
     } catch (error) {
         console.error("Error: ", error);
         res.status(500).json({ error: "Something went wrong" });
@@ -93,11 +96,13 @@ const checkOut = async (req, res) => {
         await Inventory.findOneAndUpdate({name: item.name}, {$inc: {stock : -item.qty}})
     }
     await tempUserCart.deleteMany();
+    res.status(201).json({ message: "Success! Cart updated." });
 }
 
 const deleteCartItem = async (req, res) => {
     const findID = await tempUserCart.findOne({name: req.body.name})
     await tempUserCart.deleteOne({_id: findID})
+    res.status(201).json({ message: "Success! Cart updated." });
 }
 
 module.exports = { renderProducts, renderUserCart, addToCart, updateCart, renderCheckout, checkOut, deleteCartItem };
