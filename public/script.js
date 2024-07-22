@@ -1,6 +1,6 @@
 document.querySelector('#homeCodex').addEventListener('click', () => {
   location.href = '/';
-})
+});
 
 document.querySelector('#cartIcon').addEventListener('click', () => {
   location.href = '/cart';
@@ -18,10 +18,12 @@ const debounce = (func, delay) => {
   };
 };
 
+const debouncedAddToCart = debounce(addToCart, 200);
+
 addToCartButton.forEach(button => button.addEventListener('click', (e) => {
   toastModal();
-  debounce(addToCart, 200)
-}))
+  debouncedAddToCart(e);
+}));
 
 function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
