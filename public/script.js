@@ -6,15 +6,25 @@ document.querySelector('#cartIcon').addEventListener('click', () => {
   location.href = '/cart';
 });
 
-
 const addToCartButton = document.querySelectorAll('.card-footer > button');
 
-addToCartButton.forEach(button => button.addEventListener('click', addToCart));
+const debounce = (func, delay) => {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+};
+
+addToCartButton.forEach(button => button.addEventListener('click', (e) => {
+  toastModal();
+  debounce(addToCart, 200)
+}))
 
 function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
-
-  addToCartClicked();
 
   fetch('/api/cart', {
     method: 'PUT',
@@ -23,59 +33,17 @@ function addToCart(e) {
     },
     body: JSON.stringify({ name: productName }),
   })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.error('Error:', error));
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error:', error));
 }
 
-function addToCartClicked() {
-  const disabledDelay = 800;
-  const addToCartButtons = document.querySelectorAll('.active .card-footer button');
-  addToCartButtons.forEach(button => {
-    button.disabled = true;
-    setTimeout(() => {
-      button.disabled = false;
-    }, disabledDelay)
-  });
-
-
-  if (!document.getElementById('toastContainer')) {
-      var toastContainer = document.createElement('div');
-      toastContainer.id = 'toastContainer';
-      toastContainer.className = 'position-fixed bottom-0 start-0 p-4';
-      toastContainer.style.zIndex = '11';
-      document.body.appendChild(toastContainer);
-  }
-
-  let toastId = 'cartToast' + new Date().getTime();
-
-  let toastElement = document.createElement('div');
-  toastElement.id = toastId;
-  toastElement.className = 'toast hide';
-  toastElement.role = 'alert';
-  toastElement.ariaLive = 'assertive';
-  toastElement.ariaAtomic = 'true';
-  toastElement.innerHTML = `
-      <div class="toast-header bg-primary text-light">
-          <strong class="me-auto">Added to Cart</strong>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-          Your item has been added to the cart.
-      </div>
-  `;
-
-  document.getElementById('toastContainer').appendChild(toastElement);
-
-  let style = document.createElement('style');    
-  document.getElementsByTagName('head')[0].appendChild(style);
-
-  let toast = new bootstrap.Toast(toastElement);
-  toastElement.addEventListener('show.bs.toast', function () {
-      toastElement.style.opacity = 0;
-      setTimeout(() => {
-          toastElement.style.opacity = 1;
-      }, 10);
-  });
-  toast.show();
+function toastModal() {
+  const toastContainer = document.getElementById('toastContainer');
+  const toastTemplate = document.getElementById('toastTemplate');
+  const newToast = toastTemplate.cloneNode(true);
+  newToast.style.display = 'block';
+  toastContainer.appendChild(newToast);
+  const toastBootstrap = new bootstrap.Toast(newToast);
+  toastBootstrap.show();
 }
