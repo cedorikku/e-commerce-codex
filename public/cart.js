@@ -132,7 +132,6 @@ function deleteModal(name) {
   deleteModal.show();
   modalDeleteQuery.querySelector('#actYes').addEventListener('click', (e) => {
     deleteItem(name);
-    location.reload();
   });
   return 1;
 }
@@ -160,4 +159,7 @@ function deleteItem(name) {
     },
     body: JSON.stringify({name}),
   })
+  .then(response => response.json())
+  .then(() => location.reload())
+  .catch((error) => console.log('Error: ', error));
 }
