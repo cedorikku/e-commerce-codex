@@ -1,0 +1,156 @@
+[
+    {
+        "picture": "https://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/ewamlc1l7ifxadnfheu0.png",
+        "name": "Microwave Oven",
+        "price": 2500,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/fywlf7ujriclpfjmptvi.png",
+        "name": "Dishwashing Liquid",
+        "price": 120,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/ontqdsadycjtflkvjpfz.png",
+        "name": "Cutting Board",
+        "price": 300,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323727/COLLEGE/codex-e-commerce/assets/images/trjtdfugaq1rmlr7ngnt.png",
+        "name": "Blender",
+        "price": 1200,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323730/COLLEGE/codex-e-commerce/assets/images/wkjt5rxlvf3k4axyjnvt.png",
+        "name": "Non Stick Frying Pan",
+        "price": 540,
+        "stock": 100,
+        "category": "Kitchen"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323730/COLLEGE/codex-e-commerce/assets/images/ijpaf0x2uxvnzgp0h5pa.png",
+        "name": "Shower Curtain",
+        "price": 500,
+        "stock": 100,
+        "category": "Bathroom"
+    },
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/pyopo8ub5eatwkuepx5z.png",
+        "name": "Handsoap",
+        "price": 50,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323727/COLLEGE/codex-e-commerce/assets/images/ze32ghs4hpxhyvb39fuz.png",
+        "name": "Bath Towels",
+        "price": 250,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323729/COLLEGE/codex-e-commerce/assets/images/buydmfydptbhmyqdyzvi.png",
+        "name": "Toothbrush Holder",
+        "price": 350,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323729/COLLEGE/codex-e-commerce/assets/images/mxngtjv01k9brd209tga.png",
+        "name": "Bathroom Cleaner",
+        "price": 150,
+        "stock": 100,
+        "category": "Bathroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323729/COLLEGE/codex-e-commerce/assets/images/pby0w4ongtkbl3jenu0d.jpg",
+        "name": "Vacuum Cleaner",
+        "price": 4500,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323753/COLLEGE/codex-e-commerce/assets/images/aas4zllmhc6bmfj0l6jh.png",
+        "name": "Air Freshener",
+        "price": 150,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/xuhcviuf9wqwrzjqkype.png",
+        "name": "Humidifier",
+        "price": 1200,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323727/COLLEGE/codex-e-commerce/assets/images/a4cv05dl77epjaxffomr.png",
+        "name": "Carpet",
+        "price": 1000,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323729/COLLEGE/codex-e-commerce/assets/images/yc7ilrxfzgpxdgq0qk33.png",
+        "name": "Sofa Pillows",
+        "price": 250,
+        "stock": 100,
+        "category": "Living Room"
+    }
+    ,
+    
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323727/COLLEGE/codex-e-commerce/assets/images/u70vwkdtcfj4nftgmaal.png",
+        "name": "Bed Sheets",
+        "price": 380,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323727/COLLEGE/codex-e-commerce/assets/images/gavy0lamjjmbfvosrta3.png",
+        "name": "Alarm Clock",
+        "price": 200,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/nkxxmxvbryojwn3go2jc.png",
+        "name": "Closet Organizer",
+        "price": 300,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/i0mhasq0yuuqiukfpkgm.png",
+        "name": "Table Lamp",
+        "price": 500,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+    ,
+    {
+        "picture": "http://res.cloudinary.com/dpdcx9u17/image/upload/v1721323728/COLLEGE/codex-e-commerce/assets/images/ht4cgjmpoqdnzfywzzpd.png",
+        "name": "Curtains",
+        "price": 300,
+        "stock": 100,
+        "category": "Bedroom"
+    }
+]
