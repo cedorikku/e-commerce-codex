@@ -14,6 +14,8 @@ addToCartButton.forEach(button => button.addEventListener('click', addToCart));
 function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
 
+  addToCartClicked();
+
   fetch('/api/cart', {
     method: 'PUT',
     headers: {
@@ -27,6 +29,16 @@ function addToCart(e) {
 }
 
 function addToCartClicked() {
+  const disabledDelay = 800;
+  const addToCartButtons = document.querySelectorAll('.active .card-footer button');
+  addToCartButtons.forEach(button => {
+    button.disabled = true;
+    setTimeout(() => {
+      button.disabled = false;
+    }, disabledDelay)
+  });
+
+
   if (!document.getElementById('toastContainer')) {
       var toastContainer = document.createElement('div');
       toastContainer.id = 'toastContainer';
@@ -66,5 +78,4 @@ function addToCartClicked() {
       }, 10);
   });
   toast.show();
-
 }
