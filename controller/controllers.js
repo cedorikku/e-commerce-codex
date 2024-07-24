@@ -17,22 +17,22 @@ const renderUserCart = async (req, res) => {
 }
 
 const addToCart = async (req, res) => {
-    const item = await Inventory.findOne({ name: req.body.name })
+    const items = await Inventory.findOne({ name: req.body.name })
     // const added = await Inventory.findByIdAndUpdate(item._id, { $inc: { stock: -1 } })
-    let tempItem = await tempUserCart.findOne({name: item.name})
+    let tempItem = await tempUserCart.findOne({name: items.name})
     if (tempItem) {
-        if (tempItem.qty < item.stock){
-            await tempUserCart.findOneAndUpdate({name: item.name}, { $inc: { qty: 1, subtotal: item.price }});
+        if (tempItem.qty < items.stock){
+            await tempUserCart.findOneAndUpdate({name: items.name}, { $inc: { qty: 1, subtotal: items.price }});
             res.status(201).json({ message: "Success! Cart updated." });
         }
     } else {
         const newItem = new tempUserCart({
-            name: item.name,
-            price: item.price,
-            stock: item.stock,
+            name: items.name,
+            price: items.price,
+            stock: items.stock,
             qty: 1,
-            category: item.category,
-            subtotal: item.price * 1
+            category: items.category,
+            subtotal: items.price * 1
         })
         newItem.save()
         res.status(201).json({ message: "Success! Item added to cart." });
