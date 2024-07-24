@@ -12,7 +12,6 @@ addToCartButton.forEach(button => button.addEventListener('click', (e) => { addT
 
 function addToCart(e) {
   const productName = e.target.parentNode.childNodes[1].textContent;
-  toastModal();
 
   fetch('/api/cart', {
     method: 'PUT',
@@ -23,12 +22,22 @@ function addToCart(e) {
   })
     .then(response => response.json())
     .then(data => console.log(data))
-    .catch((error) => console.error('Error:', error));
+    .then(() => toastModal("success"))
+    .catch((error) => { 
+      console.error('Error:', error);
+      toastModal("error");
+    });
 }
 
-function toastModal() {
+function toastModal(status) {
   const toastContainer = document.getElementById('toastContainer');
   const toastTemplate = document.getElementById('toastTemplate');
+  const toastBody = document.querySelector('.toast-body');
+  if (status === "success") {
+    toastBody.innerText = "Added to cart!";
+  } else {
+    toastBody.innerText = "Something went wrong adding your item";
+  }
   const newToast = toastTemplate.cloneNode(true);
   newToast.style.display = 'block';
   toastContainer.appendChild(newToast);
