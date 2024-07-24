@@ -99,9 +99,8 @@ function changeAmount(e) {
   updateTable(inputNode);
 }
 
-const subtotalNode = document.querySelector('#totalPrice');
-
 function updateTable(inputNode) {
+  const subtotalNode = document.querySelector('#totalPrice');
   let quantity = parseInt(inputNode.value, 10);
   // Child node 4 of a row is the item's price
   let price = inputNode.closest('tr').children[4];
